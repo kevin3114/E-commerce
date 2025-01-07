@@ -33,6 +33,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('product.index') }}">Products</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('order.index') }}">Order</a>
+                        </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
@@ -40,6 +43,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('cart.index') }}">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/my_order">My Order</a>
                         </li>
                         <li class="nav-item">
                             <a class="btn btn-danger" href="/logout">Logout</a>

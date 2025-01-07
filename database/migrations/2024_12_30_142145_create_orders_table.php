@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
+            $table->integer('user_id');
             $table->string('full_name');
             $table->string('email');
             $table->string('delivery_address');

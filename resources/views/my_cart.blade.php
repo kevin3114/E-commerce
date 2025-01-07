@@ -94,14 +94,11 @@
                                                     data-id="{{ $row->id }}" readonly>
 
                                                 <!-- Plus Button -->
-                                                <form action="/cartupdate/{{ $row->id }}" method="POST">
+                                                <form action="/cartupdate/{{ $row->id }}" method="POST">  
                                                     @csrf
                                                     <input type="hidden" name="cart_id" value="{{ $row->cart_id }}">
-                                                    <input type="hidden" name="Product_id"
-                                                        value="{{ $row->product_id }}">
-                                                    <input type="hidden" name="product_qty"
-                                                        value="{{ $row->product_qty + 1 }}"
-                                                        class="increase-product_qty">
+                                                    <input type="hidden" name="Product_id" value="{{ $row->product_id }}">
+                                                    <input type="hidden" name="product_qty" value="{{ $row->product_qty + 1 }}" class="increase-product_qty">
                                                     <button type="submit"
                                                         class="btn btn-outline-secondary btn-sm increase"
                                                         id="increase-{{ $row->id }}"

@@ -45,7 +45,10 @@ Route::get('admin_show_user',function(){
     return view('admin_show_user',compact('userData'));
 });
 
+//order
 Route::resource('/order',OrderController::class);
+Route::get('/my_order',[OrderController::class,'my_order']);
+Route::get('/orders/category', [OrderController::class, 'filterCategory']);
 
 Route::get('/logout',[UserController::class,'logout']);
 

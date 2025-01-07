@@ -37,8 +37,7 @@ class UserController extends Controller
             'email'=>'required|email',
             'password'=>'required',
         ]);
-        if(Auth::attempt($userData))
-        {
+        if(Auth::attempt($userData)){
             return redirect('/home');
         }
     }

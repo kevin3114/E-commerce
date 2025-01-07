@@ -84,7 +84,7 @@
             <div class="row mt-5">
                 <div class="col-lg-12">
                     <button type="submit" class="btn btn-success">ADD PRODUCT</button>
-                    <a href="{{ route('product.create') }}" class="btn btn-dark">CLEAR</a>
+                    <a href="{{ route('admin.create') }}" class="btn btn-dark">CLEAR</a>
                 </div>
             </div>
         </form>

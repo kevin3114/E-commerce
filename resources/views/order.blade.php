@@ -8,10 +8,6 @@
     <!-- Bootstrap 5 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            padding-top: 20px;
-        }
-
         .order-form {
             background-color: #f8f9fa;
             padding: 30px;
@@ -40,7 +36,7 @@
 </head>
 
 <body>
-
+    <div>@include('navbar')</div>
     <div class="container">
         <div>
             @if(session('success'))
@@ -63,7 +59,7 @@
                                 </div>
                                 <div class="card-body">
                                     <p>{{ $row->product->product_desc }}</p>
-                                    <input type="number" class="form-control" name="product_qty" value={{ $row->product_qty }}>
+                                    <input type="number" class="form-control" name="product_qty" value={{ $row->product_qty }} readonly>
                                 </div>
                             </div>
                         @endforeach
@@ -90,7 +86,7 @@
                         </div>
 
                         <!-- Submit Button -->
-                        <button type="submit" class="btn btn-submit w-100">Submit Order</button>
+                        <button type="submit" class="btn btn-primary w-100">Submit Order</button>
                     </form>
                 </div>
             </div>

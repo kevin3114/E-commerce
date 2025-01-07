@@ -50,7 +50,7 @@ class CheckoutController extends Controller
         $checkout->save();
 
         if($checkout){
-            return redirect('/checkout')->with('alert','Checkout Complete.');
+            return redirect()->route('order.index');
         }   
     }
 

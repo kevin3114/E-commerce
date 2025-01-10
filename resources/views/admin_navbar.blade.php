@@ -37,6 +37,11 @@
                             <a class="nav-link" href="/admin_show_user">Users</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="btn btn-danger" href="/admin_logout">Logout</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>

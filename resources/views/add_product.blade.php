@@ -43,7 +43,6 @@
                     <label>Product category</label>&nbsp;<a href="{{ route('category.create') }}" class="btn btn-primary btn-sm mb-1">Add category</a>
                     <select name="product_category" class="form-control">
                         <option selected hidden>Select Product Category</option>
-                        <option value="Electronic">Electronic</option>
                         @foreach($categoryData as $row)
                          <option value="{{ $row -> category_name }}">{{ $row -> category_name }}</option>
                         @endforeach
@@ -61,7 +60,6 @@
                     <label>Product Brand</label>&nbsp;<a href="{{ route('brand.create') }}" class="btn btn-primary btn-sm mb-1">Add Brand</a>
                     <select name="product_brand" class="form-control">
                         <option selected hidden>Select Product Brand</option>
-                        <option value="Samsung">Samsung</option>
                         @foreach($brandData as $row)
                         <option value="{{ $row -> brand_name }}">{{ $row -> brand_name }}</option>
                        @endforeach

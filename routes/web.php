@@ -37,6 +37,7 @@ Route::post('/cartupdate/{product_id}', [CartController::class,'update']);
 
 
 //checkout
+
 Route::resource('checkout',CheckoutController::class);
 
 Route::resource('admin', AdminController::class);
@@ -51,5 +52,7 @@ Route::get('/my_order',[OrderController::class,'my_order']);
 Route::get('/orders/category', [OrderController::class, 'filterCategory']);
 
 Route::get('/logout',[UserController::class,'logout']);
+Route::get('/admin_logout',[AdminController::class,'logout']);
+
 
 

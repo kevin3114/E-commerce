@@ -6,22 +6,28 @@ use App\Models\admin;
 use App\Models\brand;
 use App\Models\category;
 use App\Models\product;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        $productData = product::all();
-        return view('admin_show_product',compact('productData'));
+        // return view('admin_home');
+        $productData = Product::all();
+        return view('show_product',compact('productData'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
         $categoryData = category::all();
         $brandData = brand::all();
-        return view('add_product',['categoryData'=>$categoryData,'brandData'=>$brandData]);
+        return view('add_product',compact('categoryData','brandData'));
     }
 
     public function store(Request $request)
@@ -62,29 +68,39 @@ class AdminController extends Controller
         ->with('alert','Successfully Product Added.');
     }
 
+    /**
+     * Display the specified resource.
+     */
     public function show(admin $admin)
     {
-        $userData = User::all();
-        return view('admin_show_user',compact('userData'));
+        //
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit(admin $admin)
     {
         //
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, admin $admin)
     {
         //
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(admin $admin)
     {
         //
     }
-    public function show_user(admin $admin)
+    public function logout()
     {
-        
+        return redirect('/login_form');
     }
-    
 }

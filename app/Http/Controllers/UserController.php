@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +24,7 @@ class UserController extends Controller
         $user = User::create($data);
 
         if($user){
-            return redirect('/login_form');
+            return redirect('/login');
         }
     }
 
@@ -33,13 +34,21 @@ class UserController extends Controller
     }
     public function login(request $request)
     {
-        $userData = $request->validate([
+        $admin = admin::where('email', $request->email)->first();
+        $user = $request->validate([
             'email'=>'required|email',
             'password'=>'required',
         ]);
-        if(Auth::attempt($userData)){
+
+        if ($admin && $admin->password === $request->password) {
+            return redirect()->route('admin.index');
+        }
+
+        if(Auth::attempt($user)){
             return redirect('/home');
         }
+
+        return redirect('/login_form')->with('error', 'Invalid email or password.');
     }
 
     public function checklogin_user(){
